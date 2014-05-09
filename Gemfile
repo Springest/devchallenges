@@ -6,6 +6,9 @@ gem 'unicorn'
 gem 'rack-timeout'
 
 gem 'sass-rails', '~> 4.0.3'
+gem 'bootstrap-sass'
+gem 'haml-rails'
+gem 'redcarpet'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 
@@ -31,6 +34,10 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'guard-rspec'
   gem 'rb-fsevent'
+end
+
+group :development do
+  gem 'seed_dumper'
 end
 
 gem 'rails_12factor'

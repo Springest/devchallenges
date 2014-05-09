@@ -1,0 +1,15 @@
+!!!
+%html
+  %head
+    %title DevContests
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body
+    .container
+      .header
+        .pull-right
+          = link_to 'Follow us', 'https://www.twitter.com/SpringestOps'
+        %h3.text-muted Springest Developer Contests
+
+      = yield

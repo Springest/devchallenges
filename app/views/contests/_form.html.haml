@@ -1,0 +1,82 @@
+%article.survey
+  .survey-description
+    %h1= @survey.name
+    :markdown
+      #{@survey.description}
+
+  .survey-form
+    = form_for(@attempt, :url => attempts_path(@attempt), html: { role: 'form' }) do |f|
+      = f.fields_for :answers do |builder|
+        - opt = 0
+        - seq = 0
+        - @survey.sections.each do |section|
+          - seq += 1
+          .survey-section
+            .section-heading
+              %h2
+                %span.text-muted= "#{section.head_number}" if section.head_number.present?
+                %span.text-muted= "#{seq}" if section.head_number.blank?
+                = section.name
+            .section-body
+              - if section.description
+                :markdown
+                  #{section.description}
+
+              - que = 0
+              - section.questions.each do |question|
+                - que += 1
+                .question
+                  %label
+                    %h3
+                      %span.text-muted
+                        = "#{question.head_number}" if question.head_number.present?
+                        = "#{seq}.#{que}" if question.head_number.blank?
+                      = question.text
+                    - if question.description
+                      :markdown
+                        #{question.description}
+
+                  - question.options.each do |option|
+                    - if option.options_type_id == Survey::OptionsType.multi_choices
+                      .choice
+                        %label
+                          = hidden_field_tag "survey_attempt[answers_attributes][#{opt}][question_id]", question.id
+                          = check_box_tag "survey_attempt[answers_attributes][#{opt}][option_id]", option.id
+                          = option.text
+                      - opt += 1
+                    - elsif option.options_type_id == Survey::OptionsType.single_choice
+                      .choice
+                        %label
+                          = hidden_field_tag "survey_attempt[answers_attributes][#{opt}][question_id]", question.id
+                          = radio_button_tag "survey_attempt[answers_attributes][#{opt}][option_id]", option.id
+                          = option.text
+                      - opt += 1
+                    - elsif option.options_type_id == Survey::OptionsType.number
+                      = hidden_field_tag "survey_attempt[answers_attributes][#{opt}][question_id]", question.id
+                      = hidden_field_tag "survey_attempt[answers_attributes][#{opt}][option_id]", option.id
+                      = number_field_tag "survey_attempt[answers_attributes][#{opt}][option_number]", "", :style => "width: 40px;"
+                      - opt += 1
+                    - elsif option.options_type_id == Survey::OptionsType.text
+                      = hidden_field_tag "survey_attempt[answers_attributes][#{opt}][question_id]", question.id
+                      = hidden_field_tag "survey_attempt[answers_attributes][#{opt}][option_id]", option.id
+                      = text_field_tag "survey_attempt[answers_attributes][#{opt}][option_text]", ""
+                      - opt += 1
+                      %p.help-block= option.text
+                    - elsif option.options_type_id == Survey::OptionsType.single_choice_with_text
+                      = hidden_field_tag "survey_attempt[answers_attributes][#{opt}][question_id]", question.id
+                      .choice
+                        %label
+                          = radio_button_tag "survey_attempt[answers_attributes][#{opt}][option_id]", option.id
+                          = "#{option.text}:"
+                        = text_field_tag "survey_attempt[answers_attributes][#{opt}][option_text]", ""
+                      - opt += 1
+                    - elsif option.options_type_id == Survey::OptionsType.multi_choices_with_text
+                      = hidden_field_tag "survey_attempt[answers_attributes][#{opt}][question_id]", question.id
+                      .choice
+                        %label
+                          = check_box_tag "survey_attempt[answers_attributes][#{opt}][option_id]", option.id
+                          = "#{option.text}:"
+                        = text_field_tag "survey_attempt[answers_attributes][#{opt}][option_text]", ""
+                      - opt += 1
+
+      = f.submit "Submit", class: 'btn btn-primary btn-lg'

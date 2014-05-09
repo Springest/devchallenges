@@ -1,0 +1,30 @@
+@import 'bootstrap'
+
+.survey
+  .survey-description
+    @extend .jumbotron
+
+    p
+      @extend .lead
+
+  .survey-form
+    @extend .col-md-8
+
+  .survey-section
+    @extend .panel
+    @extend .panel-default
+
+    .section-heading
+      @extend .panel-heading
+    .section-body
+      @extend .panel-body
+
+  .question
+    @extend .form-group
+
+    input[type=text],
+    input[type=email],
+    input[type=password],
+    textarea
+      @extend .form-control
+
