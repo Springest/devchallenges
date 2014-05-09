@@ -20,6 +20,8 @@ gem 'omniauth-github'
 gem 'omniauth-twitter'
 gem 'omniauth-linkedin'
 
+gem 'activeadmin', github: 'gregbell/active_admin'
+
 gem 'questionnaire_engine', github: 'dr-click/questionnaire',
   branch: 'master', require: 'survey'
 
