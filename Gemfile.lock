@@ -1,3 +1,11 @@
+GIT
+  remote: git://github.com/dr-click/questionnaire.git
+  revision: 26febe4bfbe560b5c73287c77b36679ee6bbcb7e
+  branch: master
+  specs:
+    questionnaire_engine (0.1)
+      rails
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -171,6 +179,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   pg
+  questionnaire_engine!
   rails (= 4.1.0)
   rb-fsevent
   rspec-rails
