@@ -31,4 +31,6 @@ group :development, :test do
   gem 'rb-fsevent'
 end
 
+gem 'rails_12factor'
+
 ruby "2.1.1"
