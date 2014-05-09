@@ -3,6 +3,9 @@ source 'https://rubygems.org'
 
 gem 'rails', '4.1.0'
 gem 'pg'
+gem 'unicorn'
+gem 'rack-timeout'
+
 gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
@@ -22,7 +25,7 @@ gem 'questionnaire_engine', github: 'dr-click/questionnaire',
   branch: 'master', require: 'survey'
 
 group :development, :test do
-  gem 'spring',        group: :development
+  gem 'spring'
   gem 'spring-commands-rspec'
   gem 'rspec-rails'
   gem 'guard-rspec'
