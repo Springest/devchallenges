@@ -12,6 +12,12 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
+gem 'devise'
+gem 'omniauth'
+gem 'omniauth-github'
+gem 'omniauth-twitter'
+gem 'omniauth-linkedin'
+
 gem 'questionnaire_engine', github: 'dr-click/questionnaire',
   branch: 'master', require: 'survey'
 
