@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 gem 'rails', '4.1.0'
 gem 'pg'
 gem 'unicorn'
@@ -32,3 +31,4 @@ group :development, :test do
   gem 'rb-fsevent' if `uname` =~ /Darwin/
 end
 
+ruby "2.1.1"
