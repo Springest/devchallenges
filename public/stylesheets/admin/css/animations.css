@@ -1,0 +1,14 @@
+.anim-alert {
+  -webkit-transition:0.5s linear all;
+  transition:0.5s linear all;
+  opacity: 1;
+}
+
+.anim-alert.ng-hide {
+  opacity: 0;
+}
+
+.anim-alert.ng-hide-add,
+.anim-alert.ng-hide-remove {
+   display:block!important;
+}
