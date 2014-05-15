@@ -4,9 +4,10 @@ Rails.application.routes.draw do
   resources :attempts, :only => [:new, :create]
 
   # Admin routes
-  namespace(:admin) do
-    resources :surveys
-  end
+  # namespace(:admin) do
+  #   resources :surveys
+  #   get '/survey_surveys/:id/sections' => 'surveys#sections'
+  # end
 
   # Admin Users
   devise_for :admin_users, ActiveAdmin::Devise.config

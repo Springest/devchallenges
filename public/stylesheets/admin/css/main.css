@@ -1,0 +1,38 @@
+textarea.survey-description {
+  min-height: 280px;
+  font-size: 85%;
+}
+
+.survey-item  {
+  margin-top: 20px;
+}
+
+.survey-item h3 {
+  margin: 0;
+}
+
+.survey-item .panel-footer {
+  text-align: right;
+}
+
+.survey-item .panel-footer .btn {
+  margin-left: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.alert-nothing {
+  display: none;
+  opacity: 0;
+}
+
+.anim-alert {
+  -webkit-transition:0.5s linear all;
+  transition:0.5s linear all;
+}
+
+.alert-danger,
+.alert-success {
+  display: block!important;
+  opacity: 1;
+}

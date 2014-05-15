@@ -1,0 +1,12 @@
+<div class="modal-content">
+	<div class="modal-header">
+		<h4 class="modal-title">{{ alert.name }}</h4>
+	</div>
+	<div class="modal-body">
+		<p>{{ alert.description }}</p>
+	</div>
+	<div class="modal-footer">
+		<button type="button" class="btn btn-default" ng-click="alertCancel()">{{ alert.cancel }}</button>
+		<button type="button" class="btn btn-primary" ng-click="alertConfirm()">{{ alert.confirm }}</button>
+	</div>
+</div>

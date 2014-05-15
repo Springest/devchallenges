@@ -1,0 +1,32 @@
+<form ng-if="survey">
+	<div class="container survey-main">
+		<h1>Edit survey</h1>
+		<div class="form-group">
+			<label for="surveyName">Name</label>
+			<input type="text" class="form-control" name="name" id="surveyName" ng-model="survey.name">
+		</div>
+		<div class="form-group">
+			<label for="surveyDescription">Description</label>
+			<textarea name="description" class="form-control survey-description" id="surveyDescription" ng-model="survey.description">
+			</textarea>
+		</div>
+		<div class="form-group">
+			<button class="btn btn-primary pull-right" ng-click="saveSurvey()">Save</button>
+		</div>
+	</div>
+	<div class="container survey-sections">
+		<h2>Sections <button class="btn btn-primary pull-right" ng-click="sectionAdd()">Add Section</button></h2>
+		<div class="panel panel-default survey-item" ng-repeat="(key, section) in survey.sections">
+			<div class="panel-heading">
+				<h3 class="panel-title"><span class="text-muted">{{ key + 1 }}.</span> {{ section.name }}</h3>
+			</div>
+			<div class="panel-body">
+				<p>{{ section.description }}</p><!-- TODO: Markdown compiler -->
+			</div>
+			<div class="panel-footer">
+				<button class="btn btn-sm btn-danger" ng-click="sectionDelete(section.id)">Delete</button>
+				<button class="btn btn-sm btn-primary" ng-click="sectionEdit(section.id)">Edit</button>
+			</div>
+		</div>
+	</div>
+</form>
