@@ -1,0 +1,8 @@
+Issues:
+
+setting email with incorrect switch statement
+double call to omniauth
+Incorrectly named view for adding email
+Incorrect definition for add_email route
+Missing resource routes for User
+Incorrect route for attempts, must use contests controller
