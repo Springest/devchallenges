@@ -1,2 +1,3 @@
-class Challenge < ActiveRecord::Base
+class ChallengesController < ActiveRecord::Base
+
 end

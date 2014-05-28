@@ -2,6 +2,9 @@ Rails.application.routes.draw do
   resources :surveys
   resources :attempts, :only => [:new, :create], controller: 'contests'
   
+  resources :challenges do
+    resources :challenge_attempts
+  end
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
