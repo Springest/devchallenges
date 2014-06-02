@@ -1,0 +1,9 @@
+%h2=@challenge.name
+
+
+%p
+  ="This challenge has been solved #{pluralize @challenge.times_solved,'time'}"
+%p
+  =@challenge.description
+%p
+  =link_to "Give it a try", new_challenge_challenge_attempt_path(@challenge)

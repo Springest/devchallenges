@@ -1,0 +1,3 @@
+def helloworld\n\tputs \"helloworld\"\nend
+
+assert_equal(\"helloworld\",helloworld)\nassert_equal(\"helloworld\",nil)

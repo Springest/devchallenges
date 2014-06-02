@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   has_surveys
   has_many :identities
+  has_many :challenge_attempts
   TEMP_EMAIL = 'change@me.com'
   TEMP_EMAIL_REGEX = /change@me.com/
 
