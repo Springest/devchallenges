@@ -42,4 +42,4 @@ end
 
 gem 'rails_12factor'
 
-ruby "2.1.1"
+ruby "2.1.6"
