@@ -28,12 +28,22 @@ gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'questionnaire_engine', github: 'dr-click/questionnaire',
   branch: 'master', require: 'survey'
 
+gem 'pry-rails'
+
+gem 'ace-rails-ap'
+gem 'jquery-ace-rails'
+
 group :development, :test do
+  gem 'dotenv-rails'
   gem 'spring'
   gem 'spring-commands-rspec'
   gem 'rspec-rails'
   gem 'guard-rspec'
   gem 'rb-fsevent'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'pry-byebug'
+  gem 'factory_girl_rails'
 end
 
 group :development do
@@ -42,4 +52,4 @@ end
 
 gem 'rails_12factor'
 
-ruby "2.1.1"
+ruby "2.1.6"
