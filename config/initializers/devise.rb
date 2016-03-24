@@ -229,7 +229,7 @@ Devise.setup do |config|
   # ==> OmniAuth
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
-  config.omniauth :github, ENV['GITHUB_DEVTRIAL_APP_ID'], ENV['GITHUB_DEVTRIAL_APP_SECRET'], scope: 'user,public_repo'
+  config.omniauth :github, ENV['GITHUB_DEVTRIAL_APP_ID'], ENV['GITHUB_DEVTRIAL_APP_SECRET'], {scope: 'user,public_repo'}
   config.omniauth :twitter, ENV['TWITTER_DEVTRIAL_APP_ID'], ENV['TWITTER_DEVTRIAL_APP_SECRET']
   config.omniauth :linked_in, ENV['LI_DEVTRIAL_APP_ID'], ENV['LI_DEVTRIAL_APP_SECRET']
 

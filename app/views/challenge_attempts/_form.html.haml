@@ -1,0 +1,20 @@
+=form_for [@challenge, @challenge_attempt] do |f|
+  .container
+    .row
+      .col-xs-6
+        =f.label :code
+        %p
+          =f.text_area :code, class: "code"
+      .col-xs-6
+        =f.label :test_code
+        %p
+          =f.text_area :test_code, class: "code"
+    .row
+      =f.label :test,"Run tests"
+      =f.check_box :test
+    .row
+      =f.submit "Submit Code"
+    .row
+      .result
+        %h1="Result"
+        =@challenge_attempt.result || "Run your code to see the result"

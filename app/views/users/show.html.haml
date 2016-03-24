@@ -1,0 +1,10 @@
+#show_user
+  %ul.list-group
+    %li.list-group-item
+      Name: #{@user.name}
+    %li.list-group-item
+      Username: #{@user.username}
+    %li.list-group-item
+      Connected With: #{@user.identities.collect{|i| i.provider}.join(",")}
+    %li.list-group-item
+      Surveys: placeholder to surveys

@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   has_surveys
-
+  has_many :identities
+  has_many :challenge_attempts
   TEMP_EMAIL = 'change@me.com'
   TEMP_EMAIL_REGEX = /change@me.com/
 
@@ -21,10 +22,11 @@ class User < ActiveRecord::Base
         user = User.new(
           name: auth.extra.raw_info.name,
           username: auth.info.nickname || auth.uid,
-          email: email ? TEMP_EMAIL : email,
+          email: email ? email : TEMP_EMAIL,
           password: Devise.friendly_token[0,20]
         )
-        user.skip_confirmation!
+        #Users are not required to be confirmed, and the confirmable module is not loaded, so this does not evaluate
+        #user.skip_confirmation!
         user.save!
       end
 
